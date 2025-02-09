@@ -3,9 +3,18 @@
  */
 package org.example;
 
+import org.example.services.UserServices;
+
+import java.io.IOException;
+
 public class App {
 
     public static void main(String[] args) {
-        System.out.println("shitt!!!");
+//        System.out.println("shitt!!!");
+        try {
+            UserServices userServices = new UserServices();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         }
 }

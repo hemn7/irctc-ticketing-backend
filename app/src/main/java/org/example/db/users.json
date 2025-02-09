@@ -1,0 +1,34 @@
+[
+  {
+    "name": "heman",
+    "password": "wewe",
+    "hashed_password": "@wer#$QQW",
+    "booked_tickets": [{
+      "ticket_id" : "ti1",
+      "source" : "erode",
+      "destination" : "chennai",
+      "user_id" : "user1",
+      "date_of_travel" : "12-12-24",
+      "train" : {
+        "train_id" : "tr1",
+        "pnr_no" : "123-456-789",
+        "seats" : [
+          [0, 0, 0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0]
+        ],
+        "list_of_trains": [
+          "erode",
+          "salem",
+          "vellore",
+          "chennai"
+        ]
+      }
+    }]
+  }
+]
