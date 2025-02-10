@@ -2,7 +2,7 @@
   {
     "name": "heman",
     "password": "wewe",
-    "hashed_password": "@wer#$QQW",
+    "hashed_password": "$2a$10$FGt.eiYIbHAkeF08PSZ7yO3d7iBHztahomgwk9fGubZ6bSnskBR1K",
     "booked_tickets": [{
       "ticket_id" : "ti1",
       "source" : "erode",

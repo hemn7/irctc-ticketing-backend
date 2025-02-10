@@ -3,9 +3,15 @@
  */
 package org.example;
 
+import org.example.entities.User;
 import org.example.services.UserServices;
+import org.example.util.UserServiceUtil;
+import org.mindrot.jbcrypt.BCrypt;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.UUID;
 
 public class App {
 
@@ -15,6 +21,56 @@ public class App {
             UserServices userServices = new UserServices();
         } catch (IOException e) {
             throw new RuntimeException(e);
+        }
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("IRCTC-Ticketing-Backend");
+        System.out.println("Enter the options");
+        System.out.println("1. Login 2. Signup");
+        int opt = scanner.nextInt();
+        if(opt==1) {
+            System.out.print("Enter your name: ");
+            String nameToLogin = scanner.next();
+            System.out.print("Enter your password: ");
+            String passwordToLogin = scanner.next();
+            try {
+                User user = new User(
+                        nameToLogin,
+                        passwordToLogin,
+                        UserServiceUtil.hashPassword(passwordToLogin),
+                        new ArrayList<>(),
+                        UUID.randomUUID().toString()
+                );
+                UserServices userServices = new UserServices(user);
+                if (userServices.loginUser()) {
+                    System.out.println("Hellow " + user.getName() + " 😁");
+                } else  {
+                    System.out.println("Oopsie, Try again");
+                }
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        } else {
+            System.out.print("Enter your name: ");
+            String nameToLogin = scanner.next();
+            System.out.print("Enter your password: ");
+            String passwordToLogin = scanner.next();
+            try {
+                User user = new User(
+                        nameToLogin,
+                        passwordToLogin,
+                        UserServiceUtil.hashPassword(passwordToLogin),
+                        new ArrayList<>(),
+                        UUID.randomUUID().toString()
+                );
+                UserServices userServices = new UserServices(user);
+                if (userServices.signupUser(user)) {
+                    System.out.println("Hellow " + user.getName() + " Thanku for signing up🤗");
+                } else  {
+                    System.out.println("Oopsie, Try again");
+                }
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
         }
         }
 }
